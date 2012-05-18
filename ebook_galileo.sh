@@ -168,7 +168,7 @@ clean_shell_programmierung()
 		cat $FILE |
 			tidy -q --show-errors 0 -asxhtml -n -c -w 0 --ascii-chars 1 |
 			xml2 |
-			tee ${FILE%.*}.ori.txt |
+			#tee ${FILE%.*}.ori.txt |
 			grep -v '/html/head/script=' |
 			sed -r 's/(title=)Galileo.*Shell-Programmierung [^ ]+ /\1/' |
 			sed -r '/@class=c1/,/@class=c4/d' |
@@ -183,7 +183,7 @@ clean_shell_programmierung()
 					sed -r '/@href=#top/,/@alt=Galileo/d'
 				fi
 			} |
-			tee ${FILE%.*}.txt |
+			#tee ${FILE%.*}.txt |
 			2html |
 			tidy -q --show-errors 0 -ashtml -c -w 0 -i --input-encoding utf8 --output-encoding latin0 |
 			grep -v '^$' > $FILE.tmp
@@ -194,7 +194,7 @@ clean_shell_programmierung()
 		cat $FILE |
 			tidy -q --show-errors 0 -asxhtml -n -c -w 0 --ascii-chars 1 |
 			xml2 |
-			tee ${FILE%.*}.ori.txt |
+			#tee ${FILE%.*}.ori.txt |
 			grep -v '/html/head/script=' |
 			sed -r 's/(title=)Galileo.*Shell-Programmierung [^ ]+ /\1/' |
 			sed -r '/background-color: #000000/d' |
@@ -203,7 +203,7 @@ clean_shell_programmierung()
 			sed -r '/@class=c[567]/,/@border=0/d' |
 			sed -r 's/(\/body\/)table\/tr\/td\/div\/table\/tr\/td\/table\/tr\/td\//\1/' |
 			sed -r '/@href=#top/,/@alt=Galileo/d' |
-			tee ${FILE%.*}.txt |
+			#tee ${FILE%.*}.txt |
 			2html |
 			tidy -q --show-errors 0 -ashtml -c -w 0 -i --input-encoding utf8 --output-encoding latin0 |
 			grep -v '^$' > $FILE.tmp
