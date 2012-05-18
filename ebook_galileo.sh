@@ -170,7 +170,7 @@ clean_shell_programmierung()
 			xml2 |
 			#tee ${FILE%.*}.ori.txt |
 			grep -v '/html/head/script=' |
-			sed -r 's/(title=)Galileo.*Shell-Programmierung [^ ]+ /\1/' |
+			sed -r 's/(title=)Galileo.*(Shell-Programmierung)/\1\2/' |
 			sed -r '/@class=c1/,/@class=c4/d' |
 			sed -r '/@width=100%/,/@border=0/d' |
 			sed -r 's/(\/body\/)table\/tr\/td\/div\/table\/tr\/td\/table\/tr\/td\//\1/' |
